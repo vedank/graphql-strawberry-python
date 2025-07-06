@@ -1,0 +1,22 @@
+[project]
+name = "graphql-strawberry-python"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Vedank Kulshrestha"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "strawberry-graphql[django] (>=0.275.5,<0.276.0)",
+    "strawberry-graphql-django (==0.62.0)"
+]
+
+[tool.poetry.dependencies]
+python = "^3.13"
+django = "^4.2"
+strawberry-graphql = { extras = ["django"], version = "^0.275.5" }
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
