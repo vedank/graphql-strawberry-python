@@ -22,6 +22,14 @@ class Mutation:
         return book
     
     @strawberry.mutation
+    def update_book(self, input:BookInput) -> BookType:
+        book = Book.objects.get(id = input.id)
+        for field, value in input.__dict__.items():
+            setattr(book, field, value)
+        book.save()
+        return book
+    
+    @strawberry.mutation
     def delete_book(self, id: int) -> bool:
         try:
             book = Book.objects.get(id=id)
